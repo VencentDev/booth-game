@@ -29,7 +29,7 @@ function createRound() {
 }
 
 export default function Home() {
-  const [deck, setDeck] = useState<Card[]>([]);
+  const [deck, setDeck] = useState<Card[]>(() => createDeck(() => 0.5));
   const [matchedIds, setMatchedIds] = useState<Set<string>>(new Set());
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [moves, setMoves] = useState(0);
@@ -63,11 +63,10 @@ export default function Home() {
   }, [clearPendingTimers]);
 
   useEffect(() => {
-    resetRound();
     void getBestSolveTime().then(setBestSolveMs);
 
     return () => clearPendingTimers();
-  }, [clearPendingTimers, resetRound]);
+  }, [clearPendingTimers]);
 
   useEffect(() => {
     if (status !== "playing") {
