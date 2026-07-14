@@ -42,16 +42,9 @@ export function MemoryCard({
         </span>
         <span className="card-face card-front">
           <span className="image-slot">
-            {card.imageUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img alt="" src={card.imageUrl} />
-            ) : (
-              <span className="placeholder-art" aria-hidden="true">
-                <span>{card.title.slice(0, 1)}</span>
-              </span>
-            )}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img alt="" src={card.imageUrl} />
           </span>
-          <span className="card-title">{card.title}</span>
         </span>
       </span>
     </button>

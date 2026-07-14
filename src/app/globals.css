@@ -280,8 +280,6 @@ svg {
 }
 
 .card-front {
-  grid-template-rows: 1fr auto;
-  gap: 8px;
   padding: clamp(10px, 1.5vw, 16px);
   transform: rotateY(180deg);
   border: 1px solid color-mix(in srgb, var(--card-accent) 60%, white 20%);
@@ -322,32 +320,8 @@ svg {
 .image-slot img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-.placeholder-art {
-  display: grid;
-  place-items: center;
-  width: clamp(48px, 45%, 72px);
-  aspect-ratio: 1;
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--card-accent) 72%, #ffffff), var(--card-accent));
-  color: rgba(17, 24, 32, 0.78);
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 900;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.54);
-}
-
-.card-title {
-  color: #323b46;
-  font-size: clamp(0.72rem, 1.5vw, 0.86rem);
-  font-weight: 900;
-  line-height: 1.1;
-  overflow: hidden;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  object-fit: contain;
+  padding: 4px;
 }
 
 .status-line {
@@ -472,9 +446,6 @@ svg {
     padding: 8px;
   }
 
-  .card-title {
-    display: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

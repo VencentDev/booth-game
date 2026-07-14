@@ -15,64 +15,64 @@ type PairDefinition = {
 
 export const PAIRS: PairDefinition[] = [
   {
-    pairId: "mountain",
-    title: "Mountain",
-    imageUrl: "",
-    accent: "#f6c453"
+    pairId: "qhealth",
+    title: "Qhealth",
+    imageUrl: "/products/1.jpeg",
+    accent: "#32d56d"
   },
   {
-    pairId: "camera",
-    title: "Camera",
-    imageUrl: "",
-    accent: "#8fd3ff"
+    pairId: "qlearn",
+    title: "Qlearn",
+    imageUrl: "/products/2.jpeg",
+    accent: "#d45f22"
   },
   {
-    pairId: "leaf",
-    title: "Leaf",
-    imageUrl: "",
-    accent: "#9ee37d"
+    pairId: "qlegal",
+    title: "Qlegal",
+    imageUrl: "/products/3.jpeg",
+    accent: "#6b128f"
   },
   {
-    pairId: "bicycle",
-    title: "Bicycle",
-    imageUrl: "",
-    accent: "#f58f7c"
+    pairId: "qlinic",
+    title: "Qlinic",
+    imageUrl: "/products/4.jpeg",
+    accent: "#35a696"
   },
   {
-    pairId: "coffee",
-    title: "Coffee",
-    imageUrl: "",
-    accent: "#d9b88f"
+    pairId: "qhris",
+    title: "Qhris",
+    imageUrl: "/products/5.jpeg",
+    accent: "#5db18c"
   },
   {
-    pairId: "anchor",
-    title: "Anchor",
-    imageUrl: "",
-    accent: "#7cc7ff"
+    pairId: "proqure",
+    title: "Proqure",
+    imageUrl: "/products/6.jpeg",
+    accent: "#1067a8"
   },
   {
-    pairId: "music",
-    title: "Music",
-    imageUrl: "",
-    accent: "#c4a1ff"
+    pairId: "qerp",
+    title: "Qerp",
+    imageUrl: "/products/7.jpeg",
+    accent: "#2f3192"
   },
   {
-    pairId: "compass",
-    title: "Compass",
-    imageUrl: "",
-    accent: "#ffcf70"
+    pairId: "qlims",
+    title: "Qlims",
+    imageUrl: "/products/8.jpeg",
+    accent: "#2d6fb5"
   },
   {
-    pairId: "book",
-    title: "Book",
-    imageUrl: "",
-    accent: "#92e3d4"
+    pairId: "qinventory",
+    title: "Qinventory",
+    imageUrl: "/products/9.jpeg",
+    accent: "#2f9ba8"
   },
   {
-    pairId: "spark",
-    title: "Spark",
-    imageUrl: "",
-    accent: "#ff9eb3"
+    pairId: "qerp-alt",
+    title: "QERP",
+    imageUrl: "/products/10.jpeg",
+    accent: "#2f3192"
   }
 ];
 
