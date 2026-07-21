@@ -220,6 +220,16 @@ export default function Home() {
     <main className="app-shell">
       <div className="game-frame">
         <div className="top-row">
+          <div className="brand-panel" aria-label="QB Match">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="brand-mark" src="/icons/qb-logo.png" alt="" />
+            <div className="brand-copy">
+              <span className="brand-title">
+                QB <strong>Match</strong>
+              </span>
+              <span className="brand-subtitle">Memory sprint</span>
+            </div>
+          </div>
           <GameHud
             bestSolveMs={bestSolveMs}
             matches={matchedIds.size / 2}
