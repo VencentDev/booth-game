@@ -38,7 +38,8 @@ export function MemoryCard({
     >
       <span className="card-inner">
         <span className="card-face card-back" aria-hidden="true">
-          <span className="back-mark" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="back-logo" src="/icons/qb-logo.png" alt="" />
         </span>
         <span className="card-face card-front">
           <span className="image-slot">

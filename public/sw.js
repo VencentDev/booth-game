@@ -1,4 +1,4 @@
-const CACHE_NAME = "matching-card-game-v1";
+const CACHE_NAME = "matching-card-game-v2";
 
 const PRECACHE_URLS = [
   "/",
@@ -6,6 +6,7 @@ const PRECACHE_URLS = [
   "/icons/icon.svg",
   "/icons/icon-192.svg",
   "/icons/icon-512.svg",
+  "/icons/qb-logo.png",
   "/products/1.jpeg",
   "/products/2.jpeg",
   "/products/3.jpeg",
