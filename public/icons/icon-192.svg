@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="Matching Card Game">
+  <rect width="192" height="192" rx="36" fill="#0b1218"/>
+  <circle cx="62" cy="45" r="58" fill="#55a8ff" opacity=".18"/>
+  <rect x="45" y="36" width="49" height="66" rx="7" fill="#162636" stroke="#7fc3ff" stroke-width="5"/>
+  <rect x="98" y="58" width="49" height="66" rx="7" fill="#162636" stroke="#9be57f" stroke-width="5"/>
+  <rect x="45" y="90" width="49" height="66" rx="7" fill="#162636" stroke="#ffd561" stroke-width="5"/>
+  <path d="M62 61h15M62 77h15M115 83h15M115 100h15M62 115h15M62 131h15" stroke="#f6f8fb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M127 39l7 14 15 2-11 11 3 15-14-7-14 7 3-15-11-11 15-2 7-14z" fill="#55a8ff"/>
+</svg>
