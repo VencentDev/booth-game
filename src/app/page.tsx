@@ -7,8 +7,13 @@ import { GameHud } from "@/components/game-hud";
 import { createDeck, type Card } from "@/lib/deck";
 import { formatElapsed } from "@/lib/format";
 import { getBestSolveTime, saveBestSolveTime } from "@/lib/best-time-store";
+import {
+  createRoundStartedAt,
+  getSecondsRemaining,
+  ROUND_SECONDS,
+  startRoundAt
+} from "@/lib/round-clock";
 
-const ROUND_SECONDS = 60;
 const MISMATCH_DELAY_MS = 760;
 const MATCH_SETTLE_MS = 220;
 
@@ -22,7 +27,7 @@ function createRound() {
     moves: 0,
     secondsRemaining: ROUND_SECONDS,
     status: "playing" as GameStatus,
-    startedAt: Date.now(),
+    startedAt: createRoundStartedAt(),
     solvedMs: null as number | null,
     isLocked: false
   };
@@ -35,7 +40,7 @@ export default function Home() {
   const [moves, setMoves] = useState(0);
   const [secondsRemaining, setSecondsRemaining] = useState(ROUND_SECONDS);
   const [status, setStatus] = useState<GameStatus>("playing");
-  const [startedAt, setStartedAt] = useState(() => Date.now());
+  const [startedAt, setStartedAt] = useState<number | null>(() => createRoundStartedAt());
   const [solvedMs, setSolvedMs] = useState<number | null>(null);
   const [bestSolveMs, setBestSolveMs] = useState<number | null>(null);
   const [isLocked, setIsLocked] = useState(false);
@@ -69,13 +74,12 @@ export default function Home() {
   }, [clearPendingTimers]);
 
   useEffect(() => {
-    if (status !== "playing") {
+    if (status !== "playing" || startedAt === null) {
       return;
     }
 
     const interval = window.setInterval(() => {
-      const elapsedSeconds = Math.floor((Date.now() - startedAt) / 1000);
-      const nextRemaining = Math.max(0, ROUND_SECONDS - elapsedSeconds);
+      const nextRemaining = getSecondsRemaining(startedAt, Date.now());
       setSecondsRemaining(nextRemaining);
 
       if (nextRemaining === 0) {
@@ -90,7 +94,8 @@ export default function Home() {
 
   const finishWin = useCallback(
     (nextMatchedIds: Set<string>) => {
-      const elapsed = Date.now() - startedAt;
+      const finishedAt = Date.now();
+      const elapsed = finishedAt - (startedAt ?? finishedAt);
       setMatchedIds(nextMatchedIds);
       setSelectedIds([]);
       setSolvedMs(elapsed);
@@ -116,6 +121,10 @@ export default function Home() {
 
       if (matchedIds.has(id) || selectedIds.includes(id)) {
         return;
+      }
+
+      if (startedAt === null) {
+        setStartedAt(startRoundAt(Date.now()));
       }
 
       const nextSelectedIds = [...selectedIds, id];
@@ -165,7 +174,7 @@ export default function Home() {
 
       timersRef.current.push(timer);
     },
-    [deck, finishWin, isLocked, matchedIds, selectedIds, status]
+    [deck, finishWin, isLocked, matchedIds, selectedIds, startedAt, status]
   );
 
   const handleGiveUp = useCallback(() => {
