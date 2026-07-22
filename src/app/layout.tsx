@@ -13,10 +13,7 @@ export const metadata: Metadata = {
     title: "Match Cards"
   },
   icons: {
-    icon: [
-      { url: "/icons/qb-logo.png", sizes: "512x512", type: "image/png" },
-      { url: "/icons/icon-512.svg", sizes: "512x512", type: "image/svg+xml" }
-    ],
+    icon: [{ url: "/icons/qb-logo.png", sizes: "512x512", type: "image/png" }],
     apple: [{ url: "/icons/qb-logo.png", sizes: "512x512", type: "image/png" }]
   }
 };
